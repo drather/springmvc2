@@ -1,16 +1,22 @@
 package hello.thymeleafbasic.basic;
 
 import lombok.Data;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.HttpSessionRequiredException;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+@Slf4j
 @Controller
 @RequestMapping("/basic")
 public class BasicController {
@@ -56,6 +62,19 @@ public class BasicController {
         public User(String username, int age) {
             this.username = username;
             this.age = age;
+        }
+    }
+
+    @GetMapping("/basic-objects")
+    public String basicObjects(HttpSession session) {
+        session.setAttribute("sessionData", "Hello Session");
+        return "basic/basic-objects";
+    }
+
+    @Component("helloBean")
+    static class HelloBean {
+        public String hello(String data) {
+            return "Hello " + data;
         }
     }
 
