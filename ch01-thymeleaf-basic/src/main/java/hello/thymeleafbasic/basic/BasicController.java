@@ -126,10 +126,17 @@ public class BasicController {
         model.addAttribute("users", list);
     }
 
+    /**
+     * 조건부 평가 위한 컨트롤러 메서드
+     * @param model
+     * @return
+     */
     @GetMapping("/condition")
     public String condition(Model model) {
+
         addUsers(model);
         return "basic/condition";
     }
+
 }
 
