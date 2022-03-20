@@ -14,27 +14,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public class ApiExceptionV2Controller {
 
-    @ResponseStatus(HttpStatus.BAD_REQUEST)
-    @ExceptionHandler(IllegalArgumentException.class)
-    public ErrorResult illegalExhandler(IllegalArgumentException e) {
-        log.error("[exceptionHandler] ex", e);
-        return new ErrorResult("BAD", e.getMessage());
-    }
 
-    @ExceptionHandler
-    public ResponseEntity<ErrorResult> userExhandler(UserException e) {
-        log.error("[exceptionHandler] ex", e);
-        ErrorResult errorResult = new ErrorResult("user-ex", e.getMessage());
-
-        return new ResponseEntity(errorResult, HttpStatus.BAD_REQUEST);
-    }
-
-    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
-    @ExceptionHandler
-    public ErrorResult exhandler(Exception e) {
-        log.error("exceptionHandler] ex", e);
-        return new ErrorResult("EX", "내부 오류");
-    }
 
     @GetMapping("/api2/members/{id}")
     public ApiExceptionController.MemberDto getMember(@PathVariable("id") String id) {
