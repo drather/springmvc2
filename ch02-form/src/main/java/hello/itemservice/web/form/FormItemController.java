@@ -49,6 +49,13 @@ public class FormItemController {
         return "redirect:/form/items/{itemId}";
     }
 
+
+    /**
+     * item 등록 요청 라우팅 컨트롤러
+     * @param itemId
+     * @param model
+     * @return
+     */
     @GetMapping("/{itemId}/edit")
     public String editForm(@PathVariable Long itemId, Model model) {
         Item item = itemRepository.findById(itemId);
