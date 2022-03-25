@@ -28,6 +28,9 @@ public class ItemRepository {
     }
 
     public void update(Long itemId, Item updateParam) {
+        /**
+         * mvc2 강의에서 수정, item 엔티티의 새로운 필드 추가
+         */
         Item findItem = findById(itemId);
         findItem.setItemName(updateParam.getItemName());
         findItem.setPrice(updateParam.getPrice());
