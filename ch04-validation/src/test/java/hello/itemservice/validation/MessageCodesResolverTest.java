@@ -21,7 +21,7 @@ public class MessageCodesResolverTest {
 
         // rejectValue() 에서, resolveMessageCodes() 호출
         // FieldError 를 생성할 때, 생성자 중 하나인 codes 에 messageCodes 를 파라미터로 넘김
-        // 타임리프가 생성돈 FieldError 에서 적절한 에러메시지를 찾아 화면에 뿌
+        // 타임리프가 생성돈 FieldError 에서 적절한 에러메시지를 찾아 화면에 뿌림
 
         Assertions.assertThat(messageCodes).containsExactly(
                 "required.item.itemName",
