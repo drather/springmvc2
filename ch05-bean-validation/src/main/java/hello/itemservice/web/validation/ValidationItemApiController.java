@@ -13,6 +13,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/validation/api/items")
 public class ValidationItemApiController {
+    /**
+     * requestBody annotation 기반의 컨트롤러 메서드.
+     * @param form
+     * @param bindingResult
+     * @return
+     */
 
     @PostMapping("/add")
     public Object addItem(@RequestBody @Validated ItemSaveForm form, BindingResult bindingResult) {
