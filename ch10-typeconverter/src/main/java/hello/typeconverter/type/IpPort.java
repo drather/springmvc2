@@ -7,11 +7,11 @@ import lombok.Getter;
 @Getter
 @EqualsAndHashCode
 public class IpPort {
-    private String id;
+    private String ip;
     private int port;
 
-    public IpPort(String id, int port) {
-        this.id = id;
+    public IpPort(String ip, int port) {
+        this.ip = ip;
         this.port = port;
     }
 }
