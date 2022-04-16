@@ -10,6 +10,6 @@ public class IpPortToStringConverter implements Converter<IpPort, String> {
     public String convert(IpPort source) {
         log.info("convert source = {}", source);
 
-        return source.getId() + ":" + source.getPort();
+        return source.getIp() + ":" + source.getPort();
     }
 }
