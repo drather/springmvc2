@@ -26,10 +26,10 @@ public class WebConfig implements WebMvcConfigurer {
                 .excludePathPatterns("/css/**", "/*.ico", "/error");
 
         registry.addInterceptor(new LoginCheckInterceptor())
-                .order(2)
-                .addPathPatterns("/**")
-                .excludePathPatterns("/", "/members/add", "/login", "logout", "/css/*", "/*.ico", "/error");
-    }
+                    .order(2)
+                    .addPathPatterns("/**")
+                    .excludePathPatterns("/", "/members/add", "/login", "logout", "/css/*", "/*.ico", "/error");
+        }
 
     @Override
     public void addArgumentResolvers(List<HandlerMethodArgumentResolver> resolvers) {
